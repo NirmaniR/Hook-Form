@@ -3,8 +3,11 @@ import React,{useState} from 'react'
 function HookForm(){
     const[user,setUser]=useState([])
     const[inputData,setInputData]=useState({firstName:'',lasttname:'',faculty:'',gender:''})
-    const addUser=()=>{ setUser([...user,{firstName:inputData.firstName,lastName:inputData.lastName,faculty:inputData.faculty,gender:inputData.gender}]) }
-
+    const addUser=(e)=>{
+        e.preventDefault();
+        setUser([...user,{firstName:inputData.firstName,lastName:inputData.lastName,faculty:inputData.faculty,gender:inputData.gender}]) }
+    //     <input type="radio" id="female" name="gender" value={inputData.gender}
+    //    onChange={(e) =>{console.log(e.target.id);setInputData({...inputData, gender: e.target.id})}} />
     return(
         <div>
             <form align="center" >
@@ -24,13 +27,13 @@ function HookForm(){
                 <p>
                     <div>
                         Gender :
-                        <input type="radio" id="male" name="gender" value={inputData.gender} onChange={e => setInputData({...inputData,gender : e.target.value})}/>
+                        <input type="radio" id="male" name="gender" value={inputData.gender} onChange={e => setInputData({...inputData,gender : e.target.id})}/>
                         <label for="male">Male</label>
-                        <input type="radio" id="female" name="gender" value={inputData.gender} onChange={e => setInputData({...inputData,gender : e.target.value})}/>
+                        <input type="radio" id="female" name="gender" value={inputData.gender} onChange={e => setInputData({...inputData,gender : e.target.id})}/>
                         <label for="female">Female</label><br/>
                     </div>
                 </p> 
-                <button onClick={addUser}>Add</button>
+                <button onClick={(e) => {addUser(e)}}>Add</button>
                 </form>
             
             <p></p>
