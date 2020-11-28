@@ -13,7 +13,7 @@ function RandomUser() {
 
     useEffect(async () => {
         const config ={
-            'method' : 'post',
+            'method' : 'get',
             'url' : '/'
         };
         const res = await instance.request(config);

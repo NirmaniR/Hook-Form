@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 
 function HookForm(){
     const[user,setUser]=useState([])
-    const[inputData,setInputData]=useState({firstName:'',lasttname:'',faculty:'',gender:''})
+    const[inputData,setInputData]=useState( )
     const addUser=(e)=>{
         e.preventDefault();
         setUser([...user,{firstName:inputData.firstName,lastName:inputData.lastName,faculty:inputData.faculty,gender:inputData.gender}]) }
