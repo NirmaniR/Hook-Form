@@ -9,8 +9,8 @@ function Routing(){
             <div>
                 <h1>Welcome</h1>
                 <ul>
-                    <li>
-                        <Link to = "/Login">Login</Link>
+                     <li>
+                        <Link to = "/">Login</Link>
                     </li>
                     <li>
                         <Link to = "/Register">Register</Link>
@@ -18,10 +18,11 @@ function Routing(){
                     <li>
                         <Link to = "/UserInfo">UserInfo</Link>
                     </li>
+
                 </ul>
                 <div>
                     <Switch>
-                        <Route exact path="/Login" component ={Login}/>
+                        <Route exact path="/" component ={Login}/>
                         <Route exact path="/Register" component ={Register} />
                         <Route exact path="/UserInfo" component ={UserInfo}/>
                     </Switch>
